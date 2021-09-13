@@ -11,7 +11,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/bookmarks' do
-    "Hello"
+    Bookmark.new.all
   end
 
   run! if app_file == $0
