@@ -7,3 +7,7 @@ Class Name: Bookmark
 Mehods: view_bookmarks
 
 Variables: bookmark_list = {}
+
+Database setup: CREATE TABLE bookmarks
+                (id SERIAL PRIMARY KEY,
+                url varchar(60));
