@@ -1,5 +1,5 @@
-feature "" do
-  scenario "" do
+feature "Viewing bookmarks" do
+  scenario "User is able to view the bookmarks on the database" do
     connection = PG.connect(dbname: 'bookmark_manager_test')
 
     connection.exec("INSERT INTO bookmarks (url) VALUES ('http://www.makersacademy.com');")
