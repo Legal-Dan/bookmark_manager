@@ -28,4 +28,14 @@ describe Bookmark do
     expect(bookmarks).to include('http://www.test.com')
   end
 
+  it "can remove a bookmark from the database" do
+    connection = PG.connect(dbname: 'bookmark_manager_test')
+
+    Bookmark.add('http://www.test.com')
+    Bookmark.remove('http://www.test.com')
+    bookmarks = Bookmark.all
+
+    expect(bookmarks).to_not include('http://www.test.com')
+  end
+
 end
